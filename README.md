@@ -26,3 +26,5 @@ Enter Server Numer: 1   <---- enter number
 Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-1032-aws x86_64)
 ubuntu@ip-172-16-1-205:~$
 ```
+
+If you want to use ec2-user or another, please modify end of the line in `zz.sh`.

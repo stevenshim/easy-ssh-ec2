@@ -6,7 +6,12 @@
 * `access key pair` or `Role` has permission to describe instances.
 <br><br>
 
+## Update EC2 List
+```bash
+$ ec2.sh
+```
 
+## List EC2 and access to EC2
 ```bash
 $ zz.sh
 Num 	 IP 		 Name 		 ID 			 Type

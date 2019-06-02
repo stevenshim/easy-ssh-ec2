@@ -1,6 +1,6 @@
 #!/bin/bash
-#~/script/ec2.sh
 EC2_LIST=~/.ec2_list
+USER=ubuntu
 
 LINE_NUM=1
 echo -e "Num \t IP \t\t Name \t\t ID \t\t\t Type"
@@ -15,15 +15,23 @@ echo -n "Enter Server Numer: "
 read READ_NUM 
 
 LINE_NUM=1
-ip="localhost"
+IP=""
 
 while read LINE
 do
   if [ "$LINE_NUM" -eq "$READ_NUM" ]
   then
-    ip=$(echo $LINE|awk '{print $1}' )
+    IP=$(echo $LINE|awk '{print $1}' )
   fi
   LINE_NUM=$(( $LINE_NUM+1 ))
 done < $EC2_LIST
 
-ssh ubuntu@$ip  
+echo -n "Enter ssh user (default: ubuntu) or 'enter' to use default. : "
+read READ_USER
+
+if [ ! -z $READ_USER ]
+then
+  USER=$READ_USER
+fi
+
+ssh $USER@$IP  

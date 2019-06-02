@@ -30,4 +30,3 @@ Enter ssh user (default: ubuntu) or 'enter' to use default. : ec2-user
 ec2-user@ip-172-16-1-205:~$
 ```
 
-If you want to use ec2-user or another, please modify end of the line in `zz.sh`.

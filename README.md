@@ -26,7 +26,7 @@ Num 	 IP 		 Name 		 ID 			 Type
 3 	54.111.123.123	nginx-server	i-0efffb71111111111	t3.micro
 
 Enter Server Numer: 1
-Enter ssh user (default: ubuntu) or 'enter' to use default. : ec2-user
+Enter ssh user or leave empty to use 'ubuntu': ec2-user
 
 ...
 ...

@@ -20,6 +20,10 @@ echo ""
 echo -n "Enter Server Numer: " 
 read READ_NUM 
 
+if [[ -z $READ_NUM ]]
+then 
+    exit 1;
+fi
 
 IP=${ARRAY[$READ_NUM-1]}
 
@@ -28,7 +32,7 @@ then
     USER=$(cat ~/.zz/$IP)
 fi
 
-echo -n "Enter ssh user or 'return' to use $USER : "
+echo -n "Enter ssh user or leave empty to use '$USER' : "
 read READ_USER
 
 if [ ! -z $READ_USER ]

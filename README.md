@@ -1,5 +1,8 @@
 # Let's ssh ec2 easily.
 
+## Feature added.
+2019-06-05 Username cache - once you ssh succeed, username will be cached in ~/.zz/$IP
+
 ## Prerequisites
 * Locate your ssh `key pair` on `~/.ssh/id_rsa`.
 * `awscli` must installed.

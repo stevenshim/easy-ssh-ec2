@@ -2,6 +2,8 @@
 EC2_LIST=~/.ec2_list
 USER=ubuntu
 
+[[ -d ~/.zz ]] || mkdir ~/.zz
+
 LINE_NUM=1
 ARRAY=()
 echo -e "Num \t IP \t\t Name \t\t ID \t\t\t Type"
@@ -18,7 +20,15 @@ echo ""
 echo -n "Enter Server Numer: " 
 read READ_NUM 
 
-echo -n "Enter ssh user (default: ubuntu) or 'enter' to use default. : "
+
+IP=${ARRAY[$READ_NUM-1]}
+
+if [[ -f ~/.zz/$IP ]]
+then
+    USER=$(cat ~/.zz/$IP)
+fi
+
+echo -n "Enter ssh user or 'return' to use $USER : "
 read READ_USER
 
 if [ ! -z $READ_USER ]
@@ -27,5 +37,6 @@ then
 fi
 
 echo "ssh $USER@${ARRAY[$READ_NUM-1]}"
+ssh $USER@$IP
 
-ssh $USER@${ARRAY[$READ_NUM-1]} 
+echo "$USER" > ~/.zz/$IP
